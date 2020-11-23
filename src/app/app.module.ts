@@ -10,6 +10,8 @@ import { UserCardComponent } from './user-list/user-card/user-card.component';
 @NgModule({
   declarations: [
     AppComponent,
+    UserListComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
