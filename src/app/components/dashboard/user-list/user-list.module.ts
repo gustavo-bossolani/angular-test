@@ -4,9 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { UserListComponent } from './user-list.component';
 import { UserCardComponent } from './user-card/user-card.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -20,6 +23,7 @@ import { AgmCoreModule } from '@agm/core';
     MatButtonModule,
     MatIconModule,
     MatExpansionModule,
+    MatSnackBarModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyAZLKVkKI_c5HhVTHyUkIHwYBXmWG75FUo' })
   ],
   exports: [

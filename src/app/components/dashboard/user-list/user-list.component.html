@@ -1,8 +1,22 @@
 <div class="container">
-  <div *ngFor="let user of users">
-    <app-user-card
-      [user]="user"
-      (favoritado)="favoritado($event)">
-    </app-user-card>
+  <div *ngIf="users?.length else showMessage">
+
+    <div *ngFor="let user of users">
+      <app-user-card
+        [user]="user"
+        [exibirFavoritos]="exibirFavoritos"
+        (onFavoritadoRemovido)="favoritadoRemovido($event)">
+      </app-user-card>
+    </div>
+
   </div>
+
+  <ng-template #showMessage>
+
+    <h1
+      style="display: flex;justify-content: center;">
+      Parece não tem nada por aqui.
+    </h1>
+
+   </ng-template>
 </div>

@@ -25,9 +25,15 @@
           </agm-marker>
       </agm-map>
 
-      <mat-action-row>
-        <button mat-flat-button color="warn" (click)="favoritar()">
-          FAVORITAR
+      <mat-action-row *ngIf="!exibirFavoritos">
+        <button mat-raised-button color="primary" (click)="favoritar()">
+          Favoritar
+        </button>
+      </mat-action-row>
+
+      <mat-action-row *ngIf="exibirFavoritos">
+        <button mat-raised-button color="warn" (click)="removerFavorito()">
+          Remover Favorito
         </button>
       </mat-action-row>
 

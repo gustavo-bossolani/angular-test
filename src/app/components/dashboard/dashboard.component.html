@@ -6,9 +6,12 @@
   </mat-tab>
 
   <mat-tab
-    label="Favoritos">
+    label="Favoritos"
+    >
     <app-user-list
-      [users]="favoriteUsers">
+      [exibirFavoritos]="true"
+      [users]="favoriteUsers"
+      (onFavoritadoRemovido)="loadFromStorage()">
     </app-user-list>
   </mat-tab>
 </mat-tab-group>

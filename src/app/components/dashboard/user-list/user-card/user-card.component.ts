@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+
+import { DashboardService } from '../../dashboard.service';
 
 import User from 'src/app/shared/models/user';
-import { DashboardService } from '../../dashboard.service';
+
 
 @Component({
   selector: 'app-user-card',
@@ -13,20 +16,51 @@ export class UserCardComponent implements OnInit {
   @Input()
   user: User;
 
-  @Output('favoritado')
-  emiter: EventEmitter<User> = new EventEmitter();
+  @Input()
+  exibirFavoritos = false;
+
+  @Output()
+  onFavoritadoRemovido: EventEmitter<boolean> = new EventEmitter();
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   renderMaps = false;
 
   constructor(
-    private service: DashboardService
+    private service: DashboardService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void { }
 
   favoritar(): void {
-    this.service.saveFavorite(this.user);
-    // this.emiter.emit(this.user);
+    const hasSaved = this.service.saveFavorite(this.user);
+
+    hasSaved ?
+    this.snackBar.open("Favorito adicionado :)", 'OK!', {
+      duration: 3000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    }) :
+    this.snackBar.open('Favorito Já foi adicionado', 'OK!', {
+      duration: 3000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
+
+  }
+
+  removerFavorito(): void {
+    this.service.removerFavorito(this.user);
+
+    this.snackBar.open('Favorito removido.', '', {
+      duration: 1000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
+
+    this.onFavoritadoRemovido.emit(true);
   }
 
   parse(data: string): number {

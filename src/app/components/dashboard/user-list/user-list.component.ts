@@ -12,15 +12,20 @@ export class UserListComponent implements OnInit {
   @Input()
   users: User[];
 
-  @Output('favoritado')
-  emiter: EventEmitter<User> = new EventEmitter();
+  @Input()
+  exibirFavoritos = false;
+
+  @Output()
+  onFavoritadoRemovido: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  favoritado(user: User): void {
-    this.emiter.emit(user);
+
+
+  favoritadoRemovido(data: boolean): void {
+    this.onFavoritadoRemovido.emit(data);
   }
 
 }
