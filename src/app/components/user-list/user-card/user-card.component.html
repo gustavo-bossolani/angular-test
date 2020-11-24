@@ -1,0 +1,38 @@
+<div style="margin-bottom: 20px">
+  <mat-accordion class="headers-align">
+    <mat-expansion-panel
+      (opened)="renderMaps = true"
+      (closed)="renderMaps = false">
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>{{ user.username }}</b>
+        </mat-panel-title>
+
+        <mat-panel-description>
+          {{ user.website }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+      <agm-map
+        *ngIf="renderMaps"
+        [latitude]="parse(user.address.geo.lat)"
+        [longitude]="parse(user.address.geo.lng)"
+        [zoom]="2">
+          <agm-marker
+            [latitude]="parse(user.address.geo.lat)"
+            [longitude]="parse(user.address.geo.lng)">
+          </agm-marker>
+      </agm-map>
+
+      <mat-action-row>
+        <button mat-flat-button color="warn" (click)="favoritar()">
+          FAVORITAR
+        </button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

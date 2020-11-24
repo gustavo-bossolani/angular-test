@@ -1,0 +1,18 @@
+.user-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+agm-map{
+  height: 300px;
+}
+
+.example-headers-align {
+  justify-content: space-between;
+  align-items: center;
+}
