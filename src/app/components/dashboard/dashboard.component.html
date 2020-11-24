@@ -1,11 +1,12 @@
-<mat-tab-group>
+<mat-tab-group (selectedTabChange)="loadFromStorage()">
   <mat-tab label="Contatos">
     <app-user-list
       [users]="users">
     </app-user-list>
   </mat-tab>
 
-  <mat-tab label="Favoritos">
+  <mat-tab
+    label="Favoritos">
     <app-user-list
       [users]="favoriteUsers">
     </app-user-list>

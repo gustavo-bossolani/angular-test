@@ -19,13 +19,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('chamou dashboard');
-
-
     this.service.getUsers().subscribe(users => {
       this.users = users;
     });
 
+  }
+
+  loadFromStorage(): void {
     this.favoriteUsers = this.service.getFavorites();
   }
 

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import User from 'src/app/shared/models/user';
+import { DashboardService } from '../../dashboard.service';
 
 @Component({
   selector: 'app-user-card',
@@ -17,12 +18,15 @@ export class UserCardComponent implements OnInit {
 
   renderMaps = false;
 
-  constructor() { }
+  constructor(
+    private service: DashboardService
+  ) { }
 
   ngOnInit(): void { }
 
   favoritar(): void {
-    this.emiter.emit(this.user);
+    this.service.saveFavorite(this.user);
+    // this.emiter.emit(this.user);
   }
 
   parse(data: string): number {

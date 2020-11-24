@@ -21,11 +21,17 @@ export class DashboardService {
 
   saveFavorite(user: User): void {
     const users = this.getFavorites();
+
+    const repeatedUser = users.find(({ id }: User) => id === user.id);
+    if (repeatedUser) {
+      return;
+    };
+
     users.push(user);
     localStorage.setItem(this.localKey, JSON.stringify(users));
   }
 
   getFavorites(): User[] {
-    return JSON.parse(localStorage.getItem(this.localKey));
+    return JSON.parse(localStorage.getItem(this.localKey)) || [];
   }
 }
