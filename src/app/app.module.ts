@@ -1,4 +1,3 @@
-import { UserListModule } from './components/user-list/user-list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
@@ -9,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HeaderComponent } from './components/header/header.component';
 
+import { DashboardModule } from './components/dashboard/dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +18,10 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    UserListModule,
-    MatTabsModule
+    MatTabsModule,
+    DashboardModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

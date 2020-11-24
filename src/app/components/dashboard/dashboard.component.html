@@ -1,0 +1,13 @@
+<mat-tab-group>
+  <mat-tab label="Contatos">
+    <app-user-list
+      [users]="users">
+    </app-user-list>
+  </mat-tab>
+
+  <mat-tab label="Favoritos">
+    <app-user-list
+      [users]="favoriteUsers">
+    </app-user-list>
+  </mat-tab>
+</mat-tab-group>

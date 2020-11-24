@@ -5,16 +5,14 @@
       (closed)="renderMaps = false">
 
       <mat-expansion-panel-header>
+
         <mat-panel-title>
           <b>{{ user.username }}</b>
         </mat-panel-title>
 
-        <mat-panel-description>
-          {{ user.website }}
-        </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <p>This is the primary content of the panel.</p>
+      <p>{{ user.website }}</p>
 
       <agm-map
         *ngIf="renderMaps"

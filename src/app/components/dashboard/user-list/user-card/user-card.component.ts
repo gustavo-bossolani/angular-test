@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import User from 'src/app/shared/models/user';
 
@@ -9,26 +9,28 @@ import User from 'src/app/shared/models/user';
 })
 export class UserCardComponent implements OnInit {
 
-
   @Input()
   user: User;
 
-  renderMaps: boolean = false;
+  @Output('favoritado')
+  emiter: EventEmitter<User> = new EventEmitter();
+
+  renderMaps = false;
 
   constructor() { }
 
   ngOnInit(): void { }
 
   favoritar(): void {
-    console.log('sou o mais novo favorito');
+    this.emiter.emit(this.user);
   }
 
   parse(data: string): number {
     return Number(data);
   }
 
-  teste(event) {
-    console.log(event)
+  teste(event): void {
+    console.log(event);
   }
 
 }
