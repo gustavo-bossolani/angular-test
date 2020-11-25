@@ -1,3 +1,23 @@
-.tab-group-header {
-  padding: 5% 0;
+agm-map {
+  height: 300px;
+}
+
+.info-container.locale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info-container.company {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.info-container.company {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-direction: column;
 }

@@ -4,7 +4,7 @@ export default interface Address {
   city: string;
   zipcode: string;
   geo: {
-    lat: number;
-    lng: number;
+    lat: string;
+    lng: string;
   }
 }

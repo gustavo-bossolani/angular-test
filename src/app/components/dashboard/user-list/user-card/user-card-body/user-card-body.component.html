@@ -1,35 +1,86 @@
 <mat-tab-group
   mat-align-tabs="center">
 
-  <mat-tab
-    label="Detalhes da conta"
-    class="tab-group-header">
-    {{ user.website }}
+  <mat-tab label="Detalhes da conta">
+
+    <div class="info-container company">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput disabled [value]="user.username">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Frase de Efeito</mat-label>
+        <input matInput disabled [value]="user.email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input matInput disabled [value]="user.phone">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input matInput disabled [value]="user.website">
+      </mat-form-field>
+    </div>
   </mat-tab>
 
-  <mat-tab
-    label="Informações da Empresa"
-    class="tab-group-header">
+  <mat-tab label="Informações da Empresa">
+
+    <div class="info-container company">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput disabled [value]="user.company.name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Frase de Efeito</mat-label>
+        <input matInput disabled [value]="user.company.catchPhrase">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input matInput disabled [value]="user.company.bs">
+      </mat-form-field>
+    </div>
 
   </mat-tab>
 
-  <mat-tab
-    label="Endereço e Localização"
-    class="tab-group-header">
+  <mat-tab label="Endereço e Localização">
+    <div class="info-container locale">
+      <mat-form-field class="example-full-width">
+        <mat-label>Rua</mat-label>
+        <input matInput disabled [value]="user.address.street">
+      </mat-form-field>
 
-    {{ user.website }}
+      <mat-form-field class="example-full-width">
+        <mat-label>Suíte</mat-label>
+        <input matInput disabled [value]="user.address.suite">
+      </mat-form-field>
 
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input matInput disabled [value]="user.address.city">
+      </mat-form-field>
 
-    <agm-map
-      [latitude]="-37.3159"
-      [longitude]="-37.3159"
-      [zoom]="2">
+      <mat-form-field class="example-full-width">
+        <mat-label>Código postal</mat-label>
+        <input matInput disabled [value]="user.address.zipcode">
+      </mat-form-field>
+    </div>
 
-      <agm-marker
-        [latitude]="-37.3159"
-        [longitude]="-37.3159">
-      </agm-marker>
-    </agm-map>
+    <div>
+      <agm-map
+        [latitude]="lat"
+        [longitude]="lng"
+        [zoom]="4">
+        <agm-marker
+          [latitude]="lat"
+          [longitude]="lng">
+        </agm-marker>
+      </agm-map>
+    </div>
 
   </mat-tab>
 

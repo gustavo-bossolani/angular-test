@@ -7,6 +7,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -26,6 +27,7 @@ import { UserCardBodyComponent } from './user-card-body/user-card-body.component
     MatExpansionModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatInputModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyAZLKVkKI_c5HhVTHyUkIHwYBXmWG75FUo' })
   ],
   exports: [

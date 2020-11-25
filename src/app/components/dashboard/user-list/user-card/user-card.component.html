@@ -7,22 +7,14 @@
       <mat-expansion-panel-header>
 
         <mat-panel-title>
-          <b>{{ user.username }}</b>
+          <b>{{ user.name }}</b>
         </mat-panel-title>
 
       </mat-expansion-panel-header>
 
-      <p>{{ user.website }}</p>
-
       <app-user-card-body
         [user]="user">
       </app-user-card-body>
-
-      <!-- <agm-map [latitude]="-37.3159" [longitude]="-37.3159" [zoom]="2">
-        <agm-marker [latitude]="-37.3159" [longitude]="-37.3159">
-        </agm-marker>
-      </agm-map> -->
-
 
       <mat-action-row *ngIf="!exibirFavoritos">
         <button mat-raised-button color="primary" (click)="favoritar()">

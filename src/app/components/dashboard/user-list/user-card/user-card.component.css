@@ -8,10 +8,6 @@
   justify-content: center;
 }
 
-agm-map{
-  height: 300px;
-}
-
 .headers-align {
   justify-content: space-between;
   align-items: center;

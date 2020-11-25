@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import User from 'src/app/shared/models/user';
 
@@ -12,13 +12,23 @@ export class UserCardBodyComponent implements OnInit {
   @Input()
   user: User;
 
+  lat: number;
+  lng: number;
+
   constructor() { }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+    const{ lat, lng } = this.user.address.geo;
+    this.lat = this.parse(lat);
+    this.lng = this.parse(lng);
+   }
 
   parse(data: string): number {
     return Number(data);
+  }
+
+  teste(a) {
+    console.log(a);
   }
 
 }
