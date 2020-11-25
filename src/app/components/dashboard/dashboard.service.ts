@@ -28,12 +28,12 @@ export class DashboardService {
     };
 
     users.push(user);
-    localStorage.setItem(this.localKey, JSON.stringify(users));
+    sessionStorage.setItem(this.localKey, JSON.stringify(users));
     return true;
   }
 
   getFavorites(): User[] {
-    return JSON.parse(localStorage.getItem(this.localKey)) || [];
+    return JSON.parse(sessionStorage.getItem(this.localKey)) || [];
   }
 
   removerFavorito(user: User): void {
@@ -43,7 +43,7 @@ export class DashboardService {
     if (getUser) {
       const index = users.indexOf(getUser);
       users.splice(index, 1);
-      localStorage.setItem(this.localKey, JSON.stringify(users));
+      sessionStorage.setItem(this.localKey, JSON.stringify(users));
     };
   }
 }
