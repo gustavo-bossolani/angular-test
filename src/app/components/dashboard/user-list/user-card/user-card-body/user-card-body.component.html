@@ -1,0 +1,33 @@
+<mat-tab-group
+  mat-align-tabs="center">
+
+  <mat-tab
+    label="Detalhes da conta"
+    class="tab-group-header">
+    {{ user.website }}
+  </mat-tab>
+
+  <mat-tab
+    label="Informações da Empresa"
+    class="tab-group-header">
+
+  </mat-tab>
+
+  <mat-tab
+    label="Endereço e Localização"
+    class="tab-group-header">
+
+    <!-- <agm-map
+      [latitude]="parse(user.address.geo.lat)"
+      [longitude]="parse(user.address.geo.lng)"
+      [zoom]="2">
+
+      <agm-marker
+        [latitude]="parse(user.address.geo.lat)"
+        [longitude]="parse(user.address.geo.lng)">
+      </agm-marker>
+    </agm-map> -->
+
+  </mat-tab>
+
+</mat-tab-group>

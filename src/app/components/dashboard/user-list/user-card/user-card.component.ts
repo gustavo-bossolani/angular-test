@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 import { DashboardService } from '../../dashboard.service';
 
 import User from 'src/app/shared/models/user';
-
 
 @Component({
   selector: 'app-user-card',
@@ -61,10 +60,6 @@ export class UserCardComponent implements OnInit {
     });
 
     this.onFavoritadoRemovido.emit(true);
-  }
-
-  parse(data: string): number {
-    return Number(data);
   }
 
   teste(event): void {

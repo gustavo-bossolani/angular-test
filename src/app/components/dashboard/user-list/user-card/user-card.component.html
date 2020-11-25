@@ -14,16 +14,9 @@
 
       <p>{{ user.website }}</p>
 
-      <agm-map
-        *ngIf="renderMaps"
-        [latitude]="parse(user.address.geo.lat)"
-        [longitude]="parse(user.address.geo.lng)"
-        [zoom]="2">
-          <agm-marker
-            [latitude]="parse(user.address.geo.lat)"
-            [longitude]="parse(user.address.geo.lng)">
-          </agm-marker>
-      </agm-map>
+      <app-user-card-body
+        [user]="user">
+      </app-user-card-body>
 
       <mat-action-row *ngIf="!exibirFavoritos">
         <button mat-raised-button color="primary" (click)="favoritar()">

@@ -11,11 +11,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AgmCoreModule } from '@agm/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { UserCardBodyComponent } from './user-card/user-card-body/user-card-body.component';
 
 @NgModule({
   declarations: [
     UserListComponent,
-    UserCardComponent
+    UserCardComponent,
+    UserCardBodyComponent
   ],
   imports: [
     CommonModule,
@@ -24,11 +27,12 @@ import { AgmCoreModule } from '@agm/core';
     MatIconModule,
     MatExpansionModule,
     MatSnackBarModule,
+    MatTabsModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyAZLKVkKI_c5HhVTHyUkIHwYBXmWG75FUo' })
   ],
   exports: [
     UserListComponent,
-    UserCardComponent
+    UserCardComponent,
   ]
 })
 export class UserListModule { }
